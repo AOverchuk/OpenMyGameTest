@@ -5,13 +5,15 @@ namespace Contexts
 {
     public class ServicesContext
     {
-        public readonly PuzzlesService PuzzlesService;
-        public readonly PopupsService PopupsService;
+        public readonly PuzzlesService Puzzles;
+        public PopupsService Popups;
 
-        public ServicesContext(PuzzlesService puzzlesService, PopupsService popupsService)
+        public ServicesContext(PuzzlesService puzzles, PopupsService popups)
         {
-            PuzzlesService = puzzlesService;
-            PopupsService = popupsService;
+            Puzzles = puzzles;
+            Popups = popups;
         }
+        
+        public void SetPopupsService(PopupsService popups) => Popups = popups;
     }
 }

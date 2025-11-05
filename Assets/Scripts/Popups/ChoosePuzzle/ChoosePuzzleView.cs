@@ -8,7 +8,7 @@ namespace Popups.ChoosePuzzle
 {
     public class ChoosePuzzleView : PopupView, IChoosePuzzleView
     {
-        /// должно были бы создаваться динамически в зависимости от количества вариантов
+        /// должны были бы создаваться динамически в зависимости от количества вариантов
         /// в качестве примера сделано так
         [SerializeField] private List<Button> ChooseButtons;
 

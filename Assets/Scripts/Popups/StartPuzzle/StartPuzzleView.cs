@@ -9,7 +9,7 @@ namespace Popups.StartPuzzle
 {
     public class StartPuzzleView : PopupView, IStartPuzzleView
     {
-        /// должно были бы создаваться динамически в зависимости от количества вариантов
+        /// должны были бы создаваться динамически в зависимости от количества вариантов
         /// в качестве примера сделано так
         [SerializeField] private List<Button> ChangeDetailsCountButtons;
         [SerializeField] private List<TextMeshProUGUI> ChangeDetailsCountTexts;

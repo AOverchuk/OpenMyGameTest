@@ -35,13 +35,13 @@ namespace Services.Popups
         private IPopupPresenter CreateChoosePuzzlePresenter(WindowType type)
         {
             var view = InstantiatePrefab<ChoosePuzzleView>(type);
-            return new ChoosePuzzlePresenter(view, _puzzleModel, _servicesContext.PuzzlesService, _servicesContext.PopupsService);
+            return new ChoosePuzzlePresenter(view, _puzzleModel, _servicesContext.Puzzles, _servicesContext.Popups);
         }
         
         private IPopupPresenter CreateStartPuzzlePresenter(WindowType type)
         {
             var view = InstantiatePrefab<StartPuzzleView>(type);
-            return new StartPuzzlePresenter(view, _puzzleModel, _servicesContext.PuzzlesService);
+            return new StartPuzzlePresenter(view, _puzzleModel, _servicesContext.Puzzles);
         }
         
         private T InstantiatePrefab<T>(WindowType type) where T : MonoBehaviour

@@ -18,10 +18,10 @@ namespace Contexts
         private void Awake()
         {
             _puzzleModel = new PuzzleModel();
-            _popupsService = new PopupsService();
-            var servicesContext = new ServicesContext(PuzzlesService, _popupsService);
-            _popupsFactory = new PopupsFactory(servicesContext, _puzzleModel, PopupsRoot);
-            _popupsService.Init(_popupsFactory);
+            var baseServicesContext = new ServicesContext(PuzzlesService, _popupsService);
+            _popupsFactory = new PopupsFactory(baseServicesContext, _puzzleModel, PopupsRoot);
+            _popupsService = new PopupsService(_popupsFactory);
+            baseServicesContext.SetPopupsService(_popupsService);
         }
 
         private void Start() => _popupsService.ShowPopup(WindowType.ChoosePuzzle).Forget();

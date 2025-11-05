@@ -5,11 +5,11 @@ namespace Services.Popups
 {
     public class PopupsService
     {
-        private PopupsFactory _popupsFactory;
+        private readonly PopupsFactory _popupsFactory;
         private readonly Stack<IPopupPresenter> _openedPopups = new();
 
-        public void Init(PopupsFactory popupsFactory) => _popupsFactory = popupsFactory;
-
+        public PopupsService(PopupsFactory popupsFactory) => _popupsFactory = popupsFactory;
+        
         public async UniTask ShowPopup(WindowType type)
         {
             IPopupPresenter presenter = _popupsFactory.CreatePresenter(type);
